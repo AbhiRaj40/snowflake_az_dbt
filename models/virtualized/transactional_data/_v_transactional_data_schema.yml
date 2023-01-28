@@ -1,0 +1,61 @@
+
+version: 2
+
+models:
+
+
+
+
+  - name: v_transactional_data__cv_purchasing_document_consolidation
+    description: purchasing document consolidation
+    columns:
+      - name: PO_NUMNER
+        description: po numner
+        data_type: varchar(10)
+      - name: PO_ITEM
+        description: po item
+        data_type: varchar(5)
+      - name: COMPANY_CODE
+        description: company code
+        data_type: varchar(4)
+      - name: SUPPLIER
+        description: supplier
+        data_type: varchar(10)
+      - name: PO_CREATED_DATE
+        description: po created date
+        data_type: varchar(8)
+      - name: PO_DOCUMENTED_DATE
+        description: po documented date
+        data_type: varchar(8)
+      - name: PO_ITEM_CHANGED_DATE
+        description: po item changed date
+        data_type: varchar(8)
+      - name: MATERIAL_NUMBER
+        description: material number
+        data_type: varchar(17)
+      - name: PLANT
+        description: plant
+        data_type: varchar(4)
+      - name: PO_QUANTITY
+        description: po quantity
+        data_type: number(21,2)
+      - name: UNIT_OF_MEASURE
+        description: unit of measure
+        data_type: varchar(3)
+      - name: UNIT_PRICE
+        description: unit price
+        data_type: number(21,2)
+      - name: PO_NET_PRICE
+        description: po net price
+        data_type: number(21,2)
+      - name: PO_NET_VALUE
+        description: po net value
+        data_type: number(21,2)
+      - name: PO_GROSS_VALUE
+        description: po gross value
+        data_type: number(21,2)
+    tests:
+      - test_model:
+          enabled: '{{ (target.name == "unit_test") | as_bool }}'
+          expected_model: ref('cv_purchasing_document_consolidation_expected')
+

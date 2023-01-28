@@ -1,0 +1,3 @@
+packages:
+  - git: https://github.com/AbhiRaj40/dbt_shared_artifacts.git
+    revision: "{{env_var('DBT_SHARED_ARTIFACT_BRANCH', 'develop')}}"
